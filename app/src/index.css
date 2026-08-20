@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+/* Font faces (Playfair Display + Inter) are registered via JS imports in
+   main.tsx — that lets Vite's asset pipeline correctly fingerprint and copy
+   the referenced .woff2 files. Importing them here via CSS @import instead
+   leaves those font-file references broken in the production build. */
+
+@theme {
+  --font-serif: "Playfair Display", "Georgia", serif;
+  --font-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+
+  /* Neutral palette sampled from the artboard backgrounds/ink in the XD file */
+  --color-paper: #fafffa;
+  --color-paper-soft: #f6f5ef;
+  --color-card: #ffffff;
+  --color-ink: #201d18;
+  --color-ink-soft: #58554d;
+  --color-ink-faint: #8b887e;
+  --color-line: #e4e1d6;
+  --color-line-strong: #cfcabb;
+
+  /* Brand gold, sampled directly from the Story Builder / Plot / The End / Story icons */
+  --color-gold-100: #f6efdb;
+  --color-gold-300: #ddc888;
+  --color-gold-500: #c6ab64;
+  --color-gold-600: #b08d3e;
+  --color-gold-700: #8a6a2a;
+  --color-gold-900: #6e5220;
+
+  /* Per-builder-step accents, sampled from their dedicated icon artwork */
+  --color-idea-500: #d1ab00;
+  --color-idea-600: #a9890a;
+  --color-idea-100: #fbf3d0;
+
+  --color-setting-500: #1f6f31;
+  --color-setting-600: #175726;
+  --color-setting-100: #e1f0e3;
+
+  --color-character-500: #7b2635;
+  --color-character-600: #611d29;
+  --color-character-100: #f3e3e5;
+
+  --color-plot-500: #33475b;
+  --color-plot-600: #263647;
+  --color-plot-100: #e3e8ed;
+
+  /* World / Magic / Belief / Technology Builders, sampled directly from
+     their dedicated logo artwork in Assets/ */
+  --color-world-500: #0a6b12;
+  --color-world-600: #08540e;
+  --color-world-100: #e0ede1;
+
+  --color-magic-500: #a947d5;
+  --color-magic-600: #8935ad;
+  --color-magic-100: #f2e3f9;
+
+  --color-belief-500: #5f8abc;
+  --color-belief-600: #4a6d99;
+  --color-belief-100: #e6edf5;
+
+  --color-tech-500: #3d5a91;
+  --color-tech-600: #304773;
+  --color-tech-100: #e2e6ee;
+
+  /* Character Web (relationship map) */
+  --color-web-500: #2f8f8a;
+  --color-web-600: #256f6b;
+  --color-web-100: #e0f0ef;
+
+  --shadow-card: 0 1px 2px rgba(32, 29, 24, 0.04), 0 8px 24px rgba(32, 29, 24, 0.06);
+  --shadow-lift: 0 2px 4px rgba(32, 29, 24, 0.06), 0 16px 40px rgba(32, 29, 24, 0.1);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    color-scheme: light;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  #root {
+    min-height: 100svh;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background: var(--color-gold-300);
+    color: var(--color-ink);
+  }
+
+  textarea, input {
+    font-family: inherit;
+  }
+}
