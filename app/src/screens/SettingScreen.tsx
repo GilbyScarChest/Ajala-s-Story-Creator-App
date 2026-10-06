@@ -57,6 +57,7 @@ export function SettingScreen({ onNavigate }: { onNavigate: (id: StepId) => void
           accent={meta.accent}
           label="Why this place and not another?"
           prompt="Does the setting set a character up as a villain, a hero, a thief? Does it mean greater adversity, or a harder fall?"
+          placeholder="e.g. Chicago is the busiest city in the midwest and close to the great lakes. Mobsters everywhere, and enough diversity for lots of cool characters. A great hub for adventure in the city and out in the wilds."
           value={story.setting.why}
           onChange={(why) => updateSetting({ why })}
         />

@@ -1,5 +1,5 @@
 import type { Story } from '../types/story';
-import { emptyStory, emptyCharacterProfile } from '../types/story';
+import { emptyStory, emptyCharacter, emptyCharacterProfile } from '../types/story';
 
 const INDEX_KEY = 'story-creator:index';
 
@@ -10,6 +10,7 @@ function migrateStory(raw: Story): Story {
     ...defaults,
     ...raw,
     characters: (raw.characters ?? []).map((c) => ({
+      ...emptyCharacter(c.role),
       ...c,
       profile: { ...emptyCharacterProfile(), ...c.profile },
     })),

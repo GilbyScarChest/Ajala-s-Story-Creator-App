@@ -17,7 +17,7 @@ const THREADS = [
   {
     key: 'bPlot' as const,
     label: 'B Plot',
-    desc: 'Directly affects and informs the A plot. Mainly concerns the Deuteragonist and/or the Protagonist.',
+    desc: 'Directly affects and informs the A plot. Mainly concerns the Secondary Character and/or the Protagonist.',
   },
   {
     key: 'cPlot' as const,
@@ -37,7 +37,7 @@ export function PlotScreen({ onNavigate }: { onNavigate: (id: StepId) => void })
     <StepShell id="plot" onNavigate={onNavigate}>
       <PageHeader
         icon={plotIcon}
-        eyebrow="Step 4 — What Had Happened Was…"
+        eyebrow="Step 3 — What Had Happened Was…"
         title="Plot"
         accent={meta.accent}
         subtitle="Plot, aka the Story Arc, is the major events in a story concerning the Intention, Obstacle, Stakes, and Timeframe. Know these four parts before you start writing."

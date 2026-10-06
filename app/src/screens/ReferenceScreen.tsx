@@ -58,7 +58,7 @@ const ELEMENTS = [
 
 const PLOTS = [
   { name: 'A Plot', color: 'var(--color-plot-500)', def: 'Takes precedence over all other plots. Mainly concerns the Protagonist and the Antagonist.' },
-  { name: 'B Plot', color: 'var(--color-gold-600)', def: 'Directly affects and informs the A plot. Mainly concerns the Deuteragonist and/or the Protagonist.' },
+  { name: 'B Plot', color: 'var(--color-gold-600)', def: 'Directly affects and informs the A plot. Mainly concerns the Secondary Character and/or the Protagonist.' },
   { name: 'C Plot', color: 'var(--color-character-500)', def: 'Indirectly affects and informs the A plot. Mainly concerns Tertiary characters and/or the Protagonist.' },
 ];
 

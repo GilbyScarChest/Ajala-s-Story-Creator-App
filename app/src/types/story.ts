@@ -77,13 +77,18 @@ export interface Character {
   /** Non-protagonist only: what this character has in common with the protagonist. */
   similarity: string;
   arcType: CharacterArcType;
+  /** Arc builder parts: what they believe at the start, what tests it, what they understand at the end. */
+  arcStart: string;
+  arcChallenge: string;
+  arcEnd: string;
+  /** Composed from the arc builder parts; kept as its own field so older stories and exports still read it. */
   arcSummary: string;
   profile: CharacterProfile;
 }
 
 export const ROLE_LABEL: Record<CharacterRole, string> = {
   protagonist: 'Protagonist',
-  deuteragonist: 'Deuteragonist',
+  deuteragonist: 'Secondary Character',
   tertiary: 'Tertiary',
   antagonist: 'Antagonist',
 };
@@ -357,6 +362,9 @@ export function emptyCharacter(role: CharacterRole): Character {
     significance: '',
     similarity: '',
     arcType: '',
+    arcStart: '',
+    arcChallenge: '',
+    arcEnd: '',
     arcSummary: '',
     profile: emptyCharacterProfile(),
   };

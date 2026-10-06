@@ -28,22 +28,20 @@ export function HubScreen({ onOpenTool, onBackToDashboard }: HubScreenProps) {
 
   return (
     <div className="mx-auto max-w-5xl px-10 py-12">
-      <div className="mb-10 flex items-start justify-between gap-6">
-        <div>
-          <button
-            onClick={onBackToDashboard}
-            className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-gold-600)]"
-          >
-            ← All Stories
-          </button>
-          <input
-            value={story.title}
-            onChange={(e) => setTitle(e.target.value)}
-            placeholder="Untitled Story"
-            className="block border-b border-transparent bg-transparent font-serif text-4xl text-[var(--color-ink)] outline-none transition focus:border-[var(--color-line-strong)]"
-          />
-        </div>
-        <img src={storyCreatorLogo} alt="" className="h-20 w-auto object-contain opacity-90" />
+      <button
+        onClick={onBackToDashboard}
+        className="mb-6 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-gold-600)]"
+      >
+        ← All Stories
+      </button>
+      <div className="mb-10 flex flex-col items-center text-center">
+        <img src={storyCreatorLogo} alt="" className="mb-4 h-24 w-auto object-contain opacity-90" />
+        <input
+          value={story.title}
+          onChange={(e) => setTitle(e.target.value)}
+          placeholder="Untitled Story"
+          className="block w-full max-w-xl border-b border-transparent bg-transparent text-center font-serif text-4xl text-[var(--color-ink)] outline-none transition focus:border-[var(--color-line-strong)]"
+        />
       </div>
 
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -51,7 +49,7 @@ export function HubScreen({ onOpenTool, onBackToDashboard }: HubScreenProps) {
           <button
             key={tool.id}
             onClick={() => onOpenTool(tool.id)}
-            className="group flex flex-col items-start rounded-2xl border border-[var(--color-line)] bg-[var(--color-card)] p-6 text-left shadow-[var(--shadow-card)] transition hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)]"
+            className="group flex flex-col items-center rounded-2xl border border-[var(--color-line)] bg-[var(--color-card)] p-6 text-center shadow-[var(--shadow-card)] transition hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)]"
             style={{ borderTopColor: tool.accent, borderTopWidth: 3 }}
           >
             {TOOL_ICON[tool.id] && (

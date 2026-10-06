@@ -22,7 +22,7 @@ export const TOOLS: ToolMeta[] = [
   {
     id: 'story-builder',
     label: 'Story Builder',
-    description: 'Idea, Setting, Characters, Plot, Beginning, Middle, End.',
+    description: 'Idea, Setting, Plot, End, Beginning, Middle, Characters.',
     accent: 'var(--color-gold-600)',
     accentSoft: 'var(--color-gold-100)',
   },
